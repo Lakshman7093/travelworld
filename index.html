@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>TRAVEL</title>
+ 
+  <style>
+    *
+    {
+        padding: 0px;
+        margin: 0px;
+    }
+    #bg
+    {
+        background-size: 100% 800px;
+        background-repeat: no-repeat;
+        background-image:linear-gradient(95deg, green,purple);
+    }
+    #con1{
+        width: 80%;
+        height: 550px;
+        position: absolute;
+        top: 20%;
+        left: 10%;
+        border-radius: 30px;
+        background-image: linear-gradient(90deg,rgb(113, 9, 9),blue);
+    }
+    #con2{
+        width: 600px;
+        height: 420px;
+        position: absolute;
+        top: 23%;
+        left: 25%;
+        border-radius: 30px;
+        background-color: black;
+    }
+    #userid
+    {
+        width: 80%;
+        height: 60px;
+        font-size: 30px;
+        position: relative;
+        left: 60px;
+        top: 90px;
+        margin-top: 10px;
+        text-align: center;
+        border:  3px solid royalblue;
+        color: blueviolet;
+        border-radius: 40px;
+        background-color:transparent;
+
+    }
+    #passw
+    {
+        width: 80%;
+        height: 60px;
+        font-size: 30px;
+        position: relative;
+        left: 60px;
+        top: 110px;
+        margin-top: 10px;
+        text-align: center;
+        border:  3px solid royalblue;
+        color: blueviolet;
+        border-radius: 40px;
+        background-color:transparent;
+    }
+    #submit
+    {
+        width: 40%;
+        height: 70px;
+        font-size: 50px;
+        position: relative;
+        left: 80px;
+        top: 150px;
+        margin-top: 10px;
+        margin-left: 110px;
+        text-align: center;
+        background-color: transparent;
+        color: white;
+        border: 2px solid greenyellow;
+        border-radius: 30px;
+    }
+    #submit:hover
+    {
+        border: 3px solid white;
+        background-color: purple;
+        color: white;
+    }
+    #loginheading
+    {
+        font-size: 50px;
+        color: white;
+        letter-spacing: 10px;
+        position: absolute;
+        left: 35%;
+        top: 25px;
+    }
+    #a{
+        width:40px;
+        height:40px;
+        position: relative;
+       left: 480px;
+       top: 32px;
+    }
+   
+  </style>
+    <link rel="icon" href="travel1.ico">
+</head>
+<body id="bg">
+    <div id="con1">
+    <div id="con2">
+        <h1 id="loginheading"> LOGIN</h1>
+    <form id="good" > 
+        <input  placeholder="Enter User ID" id="userid" type="text"> <br>
+        <div>
+        <input  placeholder="Enter Password" id="passw" type="password" > <br>
+       <img src="./Trvalblack/pics/eyehide.jpg" id="a" onmousedown="vis()" onmouseup="hide()">
+        <input type="button" value="Login" id="submit" onclick="user()" > 
+    </div> 
+    </form>
+    </div>
+    </div>
+    <script>
+          function vis()
+        {
+            document.getElementById("passw").removeAttribute("type")
+            document.getElementById("a").setAttribute("src","./Trvalblack/pics/eyeshow.jpg")
+        }
+        function hide()
+        {
+            document.getElementById("passw").setAttribute("type","password")
+            document.getElementById("a").setAttribute("src","./Trvalblack/pics/eyehide.jpg")
+
+        }
+        var us="lakshman"
+        var Password="1234"
+       function user()
+        {
+            var name=document.getElementById("userid").value
+            var pass=document.getElementById("passw").value
+            if(name==us && pass==Password)
+            {
+               document.getElementById("good").setAttribute("action","main.html")
+               document.getElementById("submit").setAttribute("type","submit")
+            }
+            else if (name!=us && pass==Password)
+            {
+                document.getElementById("userid").style.borderColor="red"
+                document.getElementById("bg").style.backgroundImage="linear-gradient(95deg, red, purple)"
+              
+            }
+            else if (name==us && pass!=Password)
+            {
+                document.getElementById("passw").style.borderColor="red"
+                document.getElementById("bg").style.backgroundImage="linear-gradient(95deg,purple, red)"
+               
+                
+               
+               
+            }
+            else 
+            {
+                document.getElementById("userid").style.borderColor="red"
+                document.getElementById("passw").style.borderColor="red"
+                document.getElementById("bg").style.backgroundImage="linear-gradient(95deg,rgb(128, 8, 8), rgb(128, 8, 8))"
+                alert("Enter valid input")
+                
+            }
+        }
+      
+        
+    </script>
+</body>
+</html>
